@@ -1,5 +1,7 @@
 package models;
 
+import java.util.HashMap;
+
 import com.github.javafaker.Faker;
 
 import interfaces.constants;
@@ -21,5 +23,12 @@ public class CategoryModel implements constants {
         this.id = faker.number().numberBetween(min_value, max_value);
         this.name = faker.name().firstName();
         return this;
+    }
+
+    public HashMap<String, Object> categoryAsMap() {
+        HashMap<String, Object> categoryMap = new HashMap<>();
+        categoryMap.put("id", this.id);
+        categoryMap.put("name", this.name);
+        return categoryMap;
     }
 }

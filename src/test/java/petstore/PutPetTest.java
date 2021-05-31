@@ -12,6 +12,7 @@ import org.json.JSONObject;
 import org.junit.Test;
 
 import interfaces.filePaths;
+import interfaces.statusCodes;
 import io.restassured.response.Response;
 import models.CategoryModel;
 import models.PetModel;
@@ -22,7 +23,7 @@ import services.PetStoreApi;
 /**
  * Unit test for simple App.
  */
-public class PutPetTest implements filePaths {
+public class PutPetTest implements filePaths, statusCodes {
 
     @Test
     public void putPetIdWithValidData() throws JsonProcessingException, ValidationException {
@@ -34,7 +35,7 @@ public class PutPetTest implements filePaths {
         JSONObject jsonBody = new JSONObject(petObj.jsonPetBody());
         jsonBody.put("id", 3141528);
         Response response = petStoreApi.putPetCreate(header, jsonBody.toString());
-        assertEquals(response.getStatusCode(), 200);
+        assertEquals(response.getStatusCode(), status_code_ok);
         SchemaValidation schemaToValidate = new SchemaValidation(petBodySchemaJsonPath, response);
         assertEquals(schemaToValidate.isSchemaValid(), true);
     }
@@ -49,7 +50,7 @@ public class PutPetTest implements filePaths {
         CategoryModel newCategory = new CategoryModel().randomCategoryModel();
         petObj.category = newCategory;
         Response response = petStoreApi.putPetCreate(header, petObj.jsonPetBody());
-        assertEquals(response.getStatusCode(), 200);
+        assertEquals(response.getStatusCode(), status_code_ok);
         SchemaValidation schemaToValidate = new SchemaValidation(petBodySchemaJsonPath, response);
         assertEquals(schemaToValidate.isSchemaValid(), true);
     }
@@ -64,7 +65,7 @@ public class PutPetTest implements filePaths {
         TagsModel newTagsModel = new TagsModel().randomTagModel();
         petObj.tags.add(newTagsModel);
         Response response = petStoreApi.putPetCreate(header, petObj.jsonPetBody());
-        assertEquals(response.getStatusCode(), 200);
+        assertEquals(response.getStatusCode(), status_code_ok);
         SchemaValidation schemaToValidate = new SchemaValidation(petBodySchemaJsonPath, response);
         assertEquals(schemaToValidate.isSchemaValid(), true);
     }

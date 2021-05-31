@@ -52,7 +52,8 @@ public class PetModel implements constants {
         Faker faker = new Faker();
         this.id = faker.number().numberBetween(min_value, max_value);
         this.name = faker.name().firstName();
-        this.photoUrls = null;
+        List<String> listOfPhotosUrls = Arrays.asList(faker.internet().url());
+        this.photoUrls = listOfPhotosUrls;
         CategoryModel categoryObj = new CategoryModel();
         categoryObj.randomCategoryModel();
         this.category = categoryObj;
