@@ -30,14 +30,14 @@ public class CreatePetTest implements filePaths, statusCodes {
         HashMap<String, Object> header = new HashMap<>();
         header.put("Content-type", "application/json");
         Response response = petStoreApi.postPetCreate(header, petObj.jsonPetBody());
-        assertEquals(response.getStatusCode(), status_code_ok);
+        assertEquals(status_code_ok, response.getStatusCode());
         SchemaValidation schemaToValidate = new SchemaValidation(petBodySchemaJsonPath, response);
-        assertEquals(schemaToValidate.isSchemaValid(), true);
-        assertEquals(response.jsonPath().get("id"), petObj.id);
-        assertEquals(response.jsonPath().get("name"), petObj.name);
-        assertEquals(response.jsonPath().get("status"), petObj.status);
-        assertEquals(response.jsonPath().getMap("category"), petObj.category.categoryAsMap());
-        assertEquals(response.jsonPath().getList("photoUrls"), petObj.photoUrls);
+        assertEquals(true, schemaToValidate.isSchemaValid());
+        assertEquals(petObj.id, response.jsonPath().get("id"));
+        assertEquals(petObj.name, response.jsonPath().get("name"));
+        assertEquals(petObj.status, response.jsonPath().get("status"));
+        assertEquals(petObj.category.categoryAsMap(), response.jsonPath().getMap("category"));
+        assertEquals(petObj.photoUrls, response.jsonPath().getList("photoUrls"));
     }
 
     @Test
@@ -49,13 +49,13 @@ public class CreatePetTest implements filePaths, statusCodes {
         HashMap<String, Object> header = new HashMap<>();
         header.put("Content-type", "application/json");
         Response response = petStoreApi.postPetCreate(header, jsonBody.toString());
-        assertEquals(response.getStatusCode(), status_code_ok);
+        assertEquals(status_code_ok, response.getStatusCode());
         SchemaValidation schemaToValidate = new SchemaValidation(petBodySchemaJsonPath, response);
-        assertEquals(schemaToValidate.isSchemaValid(), true);
-        assertEquals(response.jsonPath().get("name"), petObj.name);
-        assertEquals(response.jsonPath().get("status"), petObj.status);
-        assertEquals(response.jsonPath().getMap("category"), petObj.category.categoryAsMap());
-        assertEquals(response.jsonPath().getList("photoUrls"), petObj.photoUrls);
+        assertEquals(true, schemaToValidate.isSchemaValid());
+        assertEquals(petObj.name, response.jsonPath().get("name"));
+        assertEquals(petObj.status, response.jsonPath().get("status"));
+        assertEquals(petObj.category.categoryAsMap(), response.jsonPath().getMap("category"));
+        assertEquals(petObj.photoUrls, response.jsonPath().getList("photoUrls"));
     }
 
     @Test
@@ -67,14 +67,14 @@ public class CreatePetTest implements filePaths, statusCodes {
         HashMap<String, Object> header = new HashMap<>();
         header.put("Content-type", "application/json");
         Response response = petStoreApi.postPetCreate(header, jsonBody.toString());
-        assertEquals(response.getStatusCode(), status_code_ok);
+        assertEquals(status_code_ok, response.getStatusCode());
         SchemaValidation schemaToValidate = new SchemaValidation(petBodySchemaJsonPath, response);
-        assertEquals(schemaToValidate.isSchemaValid(), true);
-        assertEquals(response.jsonPath().get("id"), petObj.id);
-        assertEquals(response.jsonPath().get("name"), petObj.name);
-        assertEquals(response.jsonPath().get("status"), petObj.status);
-        assertEquals(response.jsonPath().getMap("category"), null);
-        assertEquals(response.jsonPath().getList("photoUrls"), petObj.photoUrls);
+        assertEquals(true, schemaToValidate.isSchemaValid());
+        assertEquals(petObj.id, response.jsonPath().get("id"));
+        assertEquals(petObj.name, response.jsonPath().get("name"));
+        assertEquals(petObj.status, response.jsonPath().get("status"));
+        assertEquals(null, response.jsonPath().getMap("category"));
+        assertEquals(petObj.photoUrls, response.jsonPath().getList("photoUrls"));
     }
 
     @Test
@@ -86,14 +86,14 @@ public class CreatePetTest implements filePaths, statusCodes {
         HashMap<String, Object> header = new HashMap<>();
         header.put("Content-type", "application/json");
         Response response = petStoreApi.postPetCreate(header, jsonBody.toString());
-        assertEquals(response.getStatusCode(), status_code_ok);
+        assertEquals(status_code_ok, response.getStatusCode());
         SchemaValidation schemaToValidate = new SchemaValidation(petBodySchemaJsonPath, response);
         assertEquals(schemaToValidate.isSchemaValid(), true);
-        assertEquals(response.jsonPath().get("id"), petObj.id);
-        assertEquals(response.jsonPath().get("name"), null);
-        assertEquals(response.jsonPath().get("status"), petObj.status);
-        assertEquals(response.jsonPath().getMap("category"), petObj.category.categoryAsMap());
-        assertEquals(response.jsonPath().getList("photoUrls"), petObj.photoUrls);
+        assertEquals(petObj.id, response.jsonPath().get("id"));
+        assertEquals(null, response.jsonPath().get("name"));
+        assertEquals(petObj.status, response.jsonPath().get("status"));
+        assertEquals(petObj.category.categoryAsMap(), response.jsonPath().getMap("category"));
+        assertEquals(petObj.photoUrls, response.jsonPath().getList("photoUrls"));
     }
 
     @Test
@@ -105,14 +105,14 @@ public class CreatePetTest implements filePaths, statusCodes {
         HashMap<String, Object> header = new HashMap<>();
         header.put("Content-type", "application/json");
         Response response = petStoreApi.postPetCreate(header, jsonBody.toString());
-        assertEquals(response.getStatusCode(), status_code_ok);
+        assertEquals(status_code_ok, response.getStatusCode());
         SchemaValidation schemaToValidate = new SchemaValidation(petBodySchemaJsonPath, response);
-        assertEquals(schemaToValidate.isSchemaValid(), true);
-        assertEquals(response.jsonPath().get("id"), petObj.id);
-        assertEquals(response.jsonPath().get("name"), petObj.name);
-        assertEquals(response.jsonPath().get("status"), petObj.status);
-        assertEquals(response.jsonPath().getMap("category"), petObj.category.categoryAsMap());
-        assertEquals(response.jsonPath().getList("photoUrls").size(), 0);
+        assertEquals(true, schemaToValidate.isSchemaValid());
+        assertEquals(petObj.id, response.jsonPath().get("id"));
+        assertEquals(petObj.name, response.jsonPath().get("name"));
+        assertEquals(petObj.status, response.jsonPath().get("status"));
+        assertEquals(petObj.category.categoryAsMap(), response.jsonPath().getMap("category"));
+        assertEquals(0, response.jsonPath().getList("photoUrls").size());
     }
 
     @Test
@@ -124,14 +124,14 @@ public class CreatePetTest implements filePaths, statusCodes {
         HashMap<String, Object> header = new HashMap<>();
         header.put("Content-type", "application/json");
         Response response = petStoreApi.postPetCreate(header, jsonBody.toString());
-        assertEquals(response.getStatusCode(), status_code_ok);
+        assertEquals(status_code_ok, response.getStatusCode());
         SchemaValidation schemaToValidate = new SchemaValidation(petBodySchemaJsonPath, response);
-        assertEquals(schemaToValidate.isSchemaValid(), true);
-        assertEquals(response.jsonPath().get("id"), petObj.id);
-        assertEquals(response.jsonPath().get("name"), petObj.name);
-        assertEquals(response.jsonPath().get("status"), null);
-        assertEquals(response.jsonPath().getMap("category"), petObj.category.categoryAsMap());
-        assertEquals(response.jsonPath().getList("photoUrls"), petObj.photoUrls);
+        assertEquals(true, schemaToValidate.isSchemaValid());
+        assertEquals(petObj.id, response.jsonPath().get("id"));
+        assertEquals(petObj.name, response.jsonPath().get("name"));
+        assertEquals(null, response.jsonPath().get("status"));
+        assertEquals(petObj.category.categoryAsMap(), response.jsonPath().getMap("category"));
+        assertEquals(petObj.photoUrls, response.jsonPath().getList("photoUrls"));
     }
 
     @Test
@@ -140,10 +140,10 @@ public class CreatePetTest implements filePaths, statusCodes {
         HashMap<String, Object> header = new HashMap<>();
         header.put("Content-type", "application/json");
         Response response = petStoreApi.postPetCreate(header, "");
-        assertEquals("The status code received was: " + String.valueOf(response.getStatusCode()), status_code_bad_request);
-        assertEquals(response.jsonPath().get("code"), status_code_bad_request);
-        assertEquals(response.jsonPath().get("type"), "unknown");
-        assertEquals(response.jsonPath().get("message"), "no data");
+        assertEquals("The status code received was: " + String.valueOf(response.getStatusCode()), status_code_bad_request, response.getStatusCode());
+        assertEquals(status_code_bad_request, response.jsonPath().get("code"));
+        assertEquals("unknown", response.jsonPath().get("type"));
+        assertEquals("no data", response.jsonPath().get("message"));
     }
 
     @Test
@@ -152,10 +152,10 @@ public class CreatePetTest implements filePaths, statusCodes {
         HashMap<String, Object> header = new HashMap<>();
         header.put("Content-type", "application/json");
         Response response = petStoreApi.postPetCreate(header, "[]");
-        assertEquals("The status code received was: " + String.valueOf(response.getStatusCode()), response.getStatusCode(), status_code_bad_request);
-        assertEquals(response.jsonPath().get("code"), status_code_bad_request);
-        assertEquals(response.jsonPath().get("type"), "unknown");
-        assertEquals(response.jsonPath().get("message"), "no data");
+        assertEquals("The status code received was: " + String.valueOf(response.getStatusCode()), status_code_bad_request, response.getStatusCode());
+        assertEquals(status_code_bad_request, response.jsonPath().get("code"));
+        assertEquals("unknown", response.jsonPath().get("type"));
+        assertEquals("no data", response.jsonPath().get("message"));
     }
 
     @Test
@@ -166,8 +166,8 @@ public class CreatePetTest implements filePaths, statusCodes {
         HashMap<String, Object> header = new HashMap<>();
         header.put("Content-type", "application/xml");
         Response response = petStoreApi.postPetCreate(header, jsonBody.toString());
-        assertEquals(response.getStatusCode(), status_code_bad_request);
-        assertEquals(response.jsonPath().get("code"), status_code_bad_request);
-        assertEquals(response.jsonPath().get("type"), "unknown");
+        assertEquals(status_code_bad_request, response.getStatusCode());
+        assertEquals(status_code_bad_request, response.jsonPath().get("code"));
+        assertEquals("unknown", response.jsonPath().get("type"));
     }
 }

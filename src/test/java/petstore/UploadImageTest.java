@@ -23,6 +23,6 @@ public class UploadImageTest implements filePaths, statusCodes {
         PetStoreApi petStoreApi = new PetStoreApi();
         String fileImagePath = System.getProperty("user.dir") + imagePath;
         Response response = petStoreApi.postUploadImage(1234, fileImagePath);
-        assertEquals(response.getStatusCode(), status_code_ok);
+        assertEquals(status_code_ok, response.getStatusCode());
     }
 }

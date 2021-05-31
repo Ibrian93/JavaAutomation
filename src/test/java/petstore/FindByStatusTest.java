@@ -26,6 +26,6 @@ public class FindByStatusTest implements statusCodes {
         listOfStatus.add("sold");
         PetStoreApi petStoreApi = new PetStoreApi();
         Response response = petStoreApi.getFindByStatus(listOfStatus);
-        assertEquals(response.getStatusCode(), status_code_ok);
+        assertEquals(status_code_ok, response.getStatusCode());
     }
 }

@@ -35,9 +35,9 @@ public class PutPetTest implements filePaths, statusCodes {
         JSONObject jsonBody = new JSONObject(petObj.jsonPetBody());
         jsonBody.put("id", 3141528);
         Response response = petStoreApi.putPetCreate(header, jsonBody.toString());
-        assertEquals(response.getStatusCode(), status_code_ok);
+        assertEquals(status_code_ok, response.getStatusCode());
         SchemaValidation schemaToValidate = new SchemaValidation(petBodySchemaJsonPath, response);
-        assertEquals(schemaToValidate.isSchemaValid(), true);
+        assertEquals(true, schemaToValidate.isSchemaValid());
     }
 
     @Test
@@ -50,9 +50,9 @@ public class PutPetTest implements filePaths, statusCodes {
         CategoryModel newCategory = new CategoryModel().randomCategoryModel();
         petObj.category = newCategory;
         Response response = petStoreApi.putPetCreate(header, petObj.jsonPetBody());
-        assertEquals(response.getStatusCode(), status_code_ok);
+        assertEquals(status_code_ok, response.getStatusCode());
         SchemaValidation schemaToValidate = new SchemaValidation(petBodySchemaJsonPath, response);
-        assertEquals(schemaToValidate.isSchemaValid(), true);
+        assertEquals(true, schemaToValidate.isSchemaValid());
     }
 
     @Test
@@ -65,8 +65,8 @@ public class PutPetTest implements filePaths, statusCodes {
         TagsModel newTagsModel = new TagsModel().randomTagModel();
         petObj.tags.add(newTagsModel);
         Response response = petStoreApi.putPetCreate(header, petObj.jsonPetBody());
-        assertEquals(response.getStatusCode(), status_code_ok);
+        assertEquals(status_code_ok, response.getStatusCode());
         SchemaValidation schemaToValidate = new SchemaValidation(petBodySchemaJsonPath, response);
-        assertEquals(schemaToValidate.isSchemaValid(), true);
+        assertEquals(true, schemaToValidate.isSchemaValid());
     }
 }
