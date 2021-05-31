@@ -22,5 +22,9 @@ As the project has been built using maven, in order to run the test type the fol
 
 In case you require a report you could add also the surefire reports by adding the following command:
 
-> `mvn clean test surefire-report:report`
+> `mvn clean surefire-report:report`
 
+## Report with Surefire-Report Plugin
+For reporting purpose, it has been suggested the `surefire-report` which is a maven plugin which autogenerates an html report.
+In order to do that, execute the following command:
+`mvn clean surefire-report:report`
