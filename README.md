@@ -1,4 +1,4 @@
-# Java Automation Testing
+# Java Automation Testing :coffee:
 This is the java automation project where I show my Java automation skills.
 
 The API under testing is the [PetStore API](https://petstore.swagger.io/#/).
